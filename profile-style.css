@@ -1,0 +1,493 @@
+/* ===== halaman profile ===== */
+
+body.profile-body {
+  background: #fdf3f2;
+}
+
+.profile-page {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+}
+
+/* ---- sidebar ---- */
+.profile-sidebar {
+  background: var(--bg);
+  padding: 2.4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.sidebar-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 3rem;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 0.8rem;
+  color: #a15a70;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.menu-item svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.menu-item:hover {
+  background: rgba(205,87,130,0.1);
+}
+
+.menu-item.active {
+  background: #fff;
+  color: var(--primary);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.sidebar-deco {
+  margin-top: auto;
+  font-size: 2.4rem;
+  opacity: 0.35;
+  padding-top: 2rem;
+}
+
+/* ---- main content ---- */
+.profile-main {
+  padding: 2.8rem 3rem;
+}
+
+.profile-header {
+  background: linear-gradient(120deg, #fde3e6, #fbd0d8);
+  border-radius: 1.4rem;
+  padding: 2.4rem 3rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-photo {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.profile-photo img {
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.btn-camera {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-camera svg { width: 1rem; height: 1rem; }
+
+.profile-greeting h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #4a1520;
+}
+
+.profile-greeting h1 span {
+  color: var(--primary);
+}
+
+.email-tampil {
+  color: #7a4b55;
+  font-size: 1.05rem;
+  margin: 0.3rem 0 0.8rem;
+}
+
+.greeting-text {
+  color: #a15a70;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ---- grid konten ---- */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 1.6rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 1.2rem;
+  padding: 1.8rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.25rem;
+  color: #4a1520;
+  margin-bottom: 1.4rem;
+}
+
+.card h2 svg {
+  color: var(--primary);
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+/* informasi akun */
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #f2eaea;
+}
+
+.info-item:last-of-type {
+  border-bottom: none;
+}
+
+.info-item svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--primary);
+  background: var(--bg);
+  padding: 0.5rem;
+  border-radius: 50%;
+  box-sizing: content-box;
+  flex-shrink: 0;
+}
+
+.info-item .label {
+  display: block;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.info-item .value {
+  display: block;
+  font-size: 1.05rem;
+  color: #333;
+  font-weight: 500;
+  margin-top: 0.15rem;
+}
+
+.btn-ubah-profil {
+  width: 100%;
+  margin-top: 1.4rem;
+  padding: 0.85rem;
+  background: var(--bg);
+  color: var(--primary);
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.btn-ubah-profil:hover {
+  background: #f6c3cd;
+}
+
+.btn-ubah-profil svg { width: 1rem; height: 1rem; }
+
+/* card title row (pesanan & favorit) */
+.card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.card-title-row h2 { margin-bottom: 0; }
+
+.lihat-semua-link {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.lihat-semua-link svg { width: 0.9rem; height: 0.9rem; }
+
+/* pesanan saya */
+.pesanan-item {
+  display: grid;
+  grid-template-columns: 60px 1fr auto auto auto auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 0.6rem;
+  border-radius: 0.8rem;
+  transition: background 0.15s ease;
+}
+
+.pesanan-item:hover {
+  background: #fdf6f7;
+}
+
+.pesanan-item img {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 0.6rem;
+  object-fit: cover;
+}
+
+.pesanan-detail h4 {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 0.2rem;
+}
+
+.pesanan-meta {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.status {
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.35rem 0.9rem;
+  border-radius: 1rem;
+  white-space: nowrap;
+}
+
+.status-dikirim { background: #d6f0dd; color: #1f7a3f; }
+.status-diproses { background: #fce3b8; color: #a1660a; }
+.status-selesai { background: #e6ddf5; color: #6b3fa0; }
+
+.pesanan-tanggal {
+  font-size: 0.9rem;
+  color: #888;
+  white-space: nowrap;
+}
+
+.pesanan-harga {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.btn-invoice {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--primary);
+  border-radius: 50%;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-invoice:hover {
+  background: #f6c3cd;
+}
+
+.btn-invoice svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+@media (max-width: 950px) {
+  .pesanan-item {
+    grid-template-columns: 50px 1fr;
+    row-gap: 0.4rem;
+  }
+  .status, .pesanan-tanggal, .pesanan-harga, .btn-invoice {
+    grid-column: 2;
+  }
+}
+
+/* favorit saya */
+.favorit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.favorit-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  display:block;
+}
+
+@media (max-width: 500px) {
+  .favorit-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* pesanan-saya & favorit-saya membentang penuh di bawah informasi akun pada layar sempit */
+@media (max-width: 950px) {
+  .profile-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 800px) {
+  .profile-page { grid-template-columns: 1fr; }
+  .profile-sidebar {
+    flex-direction: row;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+  }
+  .sidebar-logo { margin-bottom: 0; margin-right: auto; font-size: 1.2rem; }
+  .sidebar-menu { flex-direction: row; gap: 0.3rem; }
+  .menu-item span, .sidebar-deco { display: none; }
+  .profile-header { flex-direction: column; text-align: center; }
+}
+
+/* pesanan-saya & favorit-saya harus membentang 2 kolom di bawah info akun (desktop) */
+.pesanan-saya, .favorit-saya, .pengaturan, .riwayat-transaksi {
+  grid-column: 2;
+}
+
+@media (max-width: 950px) {
+  .pesanan-saya, .favorit-saya, .pengaturan, .riwayat-transaksi { grid-column: 1; }
+}
+
+/* saat tab selain "Profile" aktif, cuma 1 card yang tampil -> jadi 1 kolom penuh */
+.profile-grid.single-view {
+  grid-template-columns: 1fr;
+}
+
+.profile-grid.single-view .tab-content {
+  grid-column: 1;
+}
+
+.pengaturan-placeholder {
+  color: #888;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+
+/* ============ MODAL UBAH PROFIL ============ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 999;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-box {
+  background: #fff;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  width: 90%;
+  max-width: 28rem;
+  transform: translateY(-10px);
+  transition: transform 0.2s ease;
+}
+
+.modal-overlay.active .modal-box {
+  transform: translateY(0);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.4rem;
+}
+
+.modal-header h3 {
+  font-size: 1.4rem;
+  color: #4a1520;
+}
+
+.btn-tutup {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+}
+
+#formUbahProfil label {
+  display: block;
+  font-size: 0.95rem;
+  color: #555;
+  margin: 1rem 0 0.4rem;
+}
+
+#formUbahProfil input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.btn-simpan {
+  width: 100%;
+  margin-top: 1.6rem;
+  padding: 0.9rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-simpan:hover {
+  background: #b34b70;
+}
